@@ -21,25 +21,25 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="Player" parent="." instance=ExtResource("2_lndp2")]
-position = Vector2(554, 258)
+position = Vector2(552, 315)
 
 [node name="Lilypads" type="Node" parent="."]
 
 [node name="Icon" type="Sprite2D" parent="Lilypads"]
-position = Vector2(547, 68)
+position = Vector2(558, 63)
 texture = ExtResource("3_gokpv")
 flip_v = true
 
 [node name="Icon2" type="Sprite2D" parent="Lilypads"]
-position = Vector2(558, 488)
+position = Vector2(550, 523)
 texture = ExtResource("3_gokpv")
 
 [node name="Icon3" type="Sprite2D" parent="Lilypads"]
-position = Vector2(270, 259)
+position = Vector2(173, 246)
 rotation = 1.5708
 texture = ExtResource("3_gokpv")
 
 [node name="Icon4" type="Sprite2D" parent="Lilypads"]
-position = Vector2(828, 258)
+position = Vector2(868, 241)
 rotation = -1.5708
 texture = ExtResource("3_gokpv")
