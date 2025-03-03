@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://dteh7ek58fkxp"]
+
+[ext_resource type="PackedScene" uid="uid://ct8sikaqf75ix" path="res://scenes/StartMenu.tscn" id="1_wmtrw"]
+[ext_resource type="PackedScene" uid="uid://cjn7wop0iva5s" path="res://scenes/player.tscn" id="2_lndp2"]
+[ext_resource type="Texture2D" uid="uid://dwxxhlnkdpebi" path="res://assets/icon.svg" id="3_gokpv"]
+
+[node name="Game" type="Node2D"]
+
+[node name="StartMenu" parent="." instance=ExtResource("1_wmtrw")]
+visible = false
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1151.0
+offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Player" parent="." instance=ExtResource("2_lndp2")]
+position = Vector2(552, 315)
+
+[node name="Lilypads" type="Node" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="Lilypads"]
+position = Vector2(558, 63)
+texture = ExtResource("3_gokpv")
+flip_v = true
+
+[node name="Icon2" type="Sprite2D" parent="Lilypads"]
+position = Vector2(550, 523)
+texture = ExtResource("3_gokpv")
+
+[node name="Icon3" type="Sprite2D" parent="Lilypads"]
+position = Vector2(173, 246)
+rotation = 1.5708
+texture = ExtResource("3_gokpv")
+
+[node name="Icon4" type="Sprite2D" parent="Lilypads"]
+position = Vector2(868, 241)
+rotation = -1.5708
+texture = ExtResource("3_gokpv")
