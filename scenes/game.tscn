@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ct8sikaqf75ix" path="res://scenes/StartMenu.tscn" id="1_wmtrw"]
 [ext_resource type="PackedScene" uid="uid://cjn7wop0iva5s" path="res://scenes/player.tscn" id="2_lndp2"]
-[ext_resource type="Texture2D" uid="uid://dwxxhlnkdpebi" path="res://assets/icon.svg" id="3_gokpv"]
+[ext_resource type="PackedScene" uid="uid://c3t2fx1jas3a4" path="res://scenes/IconTiles.tscn" id="3_lnu2h"]
 
 [node name="Game" type="Node2D"]
 
@@ -25,21 +25,8 @@ position = Vector2(554, 258)
 
 [node name="Lilypads" type="Node" parent="."]
 
-[node name="Icon" type="Sprite2D" parent="Lilypads"]
-position = Vector2(547, 68)
-texture = ExtResource("3_gokpv")
-flip_v = true
+[node name="Icon" parent="Lilypads" instance=ExtResource("3_lnu2h")]
+position = Vector2(739, 263)
 
-[node name="Icon2" type="Sprite2D" parent="Lilypads"]
-position = Vector2(558, 488)
-texture = ExtResource("3_gokpv")
-
-[node name="Icon3" type="Sprite2D" parent="Lilypads"]
-position = Vector2(270, 259)
-rotation = 1.5708
-texture = ExtResource("3_gokpv")
-
-[node name="Icon4" type="Sprite2D" parent="Lilypads"]
-position = Vector2(828, 258)
-rotation = -1.5708
-texture = ExtResource("3_gokpv")
+[node name="Icon2" parent="Lilypads" instance=ExtResource("3_lnu2h")]
+position = Vector2(927, 258)
