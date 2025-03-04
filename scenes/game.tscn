@@ -6,6 +6,10 @@
 
 [node name="Game" type="Node2D"]
 
+[node name="Map" type="Node" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Map"]
+
 [node name="StartMenu" parent="." instance=ExtResource("1_wmtrw")]
 visible = false
 anchors_preset = 0

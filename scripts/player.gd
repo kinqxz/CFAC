@@ -7,10 +7,11 @@ extends CharacterBody2D
 #const SPEED = 300.0
 var distance : float = 500.0
 var lastDirection : Vector2 = Vector2.ZERO
+var lastObstacleFound : Node2D = null
 #const JUMP_VELOCITY = -400.0
 #var health = 100.0
 
-func findObstacle(playerPosition : Vector2, direction: Vector2) -> Vector2:
+func findObstacle(playerPosition : Vector2, direction: Vector2) -> Node2D:
 	#for number in range(1, 15):
 		#print(number)
 	var playerX = playerPosition.x
@@ -19,7 +20,7 @@ func findObstacle(playerPosition : Vector2, direction: Vector2) -> Vector2:
 	var obstacles = lilypads.get_children()
 	var deltaX : float = distance + 1
 	var deltaY : float = distance + 1
-	var obstaclePosition : Vector2 = Vector2.ZERO
+	var lastObstacle : Node2D = null
 	var finalIcon : Node2D = null
 	
 	for obstacle in obstacles:
@@ -36,7 +37,7 @@ func findObstacle(playerPosition : Vector2, direction: Vector2) -> Vector2:
 					if deltaX <= 100 && deltaX >= -100:
 						if deltaY <= distance && deltaY > 0:
 							finalIcon = icon
-							obstaclePosition = icon.position
+							lastObstacle = icon
 			elif direction == Vector2.DOWN:
 				if currentDeltaY < deltaY:
 					deltaX = currentDeltaX
@@ -45,7 +46,7 @@ func findObstacle(playerPosition : Vector2, direction: Vector2) -> Vector2:
 					if deltaX <= 100 && deltaX >= -100:
 						if deltaY >= -distance && deltaY < 0:
 							finalIcon = icon
-							obstaclePosition = icon.position
+							lastObstacle = icon
 			elif direction == Vector2.LEFT:
 				if currentDeltaX < deltaX:
 					deltaX = currentDeltaX
@@ -54,7 +55,7 @@ func findObstacle(playerPosition : Vector2, direction: Vector2) -> Vector2:
 					if deltaX >= -distance && deltaX < 0:
 						if deltaY <= 100 && deltaY >= -100:
 							finalIcon = icon
-							obstaclePosition = icon.position
+							lastObstacle = icon
 			elif direction == Vector2.RIGHT:
 				if currentDeltaX < deltaX:
 					deltaX = currentDeltaX
@@ -63,48 +64,59 @@ func findObstacle(playerPosition : Vector2, direction: Vector2) -> Vector2:
 					if deltaX <= distance && deltaX > 0:
 						if deltaY <= 100 && deltaY >= -100:
 							finalIcon = icon
-							obstaclePosition = icon.position
+							lastObstacle = icon
 				
-	if finalIcon != null:
-		finalIcon.queue_free()
-				
-	return obstaclePosition
+	return lastObstacle
 
 func _physics_process(delta):
 	var direction = Input.get_vector("look_left", "look_right", "look_down", "look_up")
 	
 	if direction != Vector2.ZERO:
-		lastDirection = direction
+		if lastDirection != direction:
+			lastDirection = direction
+			
+			if lastObstacleFound != null:
+				lastObstacleFound.emit_signal("stopped")
 	
-	if Input.is_action_just_pressed("initial_position"):
+	if Input.is_action_just_released("initial_position"):
 		player.position = initPosition
 	
 	if Input.is_action_just_released("confirm"):
+		if lastObstacleFound != null:
+			player.position = lastObstacleFound.position
+			lastObstacleFound.queue_free()
+			lastObstacleFound = null
+			
+	if direction != Vector2.ZERO:
 		if lastDirection == Vector2.DOWN:
-			var obstaclePosition = findObstacle(player.get_position_delta(), Vector2.DOWN)
+			var obstacle = findObstacle(player.get_position_delta(), Vector2.DOWN)
 			
-			if obstaclePosition != Vector2.ZERO:
+			if obstacle != null:
 				print("Up!")
-				player.position = obstaclePosition
 				lastDirection = Vector2.ZERO
+				lastObstacleFound = obstacle
+				obstacle.emit_signal("chosen")
 		if lastDirection == Vector2.RIGHT:
-			var obstaclePosition = findObstacle(player.get_position_delta(), Vector2.RIGHT)
-			
-			if obstaclePosition != Vector2.ZERO:
+			var obstacle = findObstacle(player.get_position_delta(), Vector2.RIGHT)
+				
+			if obstacle != null:
 				print("Right!")
-				player.position = obstaclePosition
 				lastDirection = Vector2.ZERO
+				lastObstacleFound = obstacle
+				obstacle.emit_signal("chosen")
 		if lastDirection == Vector2.LEFT:
-			var obstaclePosition = findObstacle(player.get_position_delta(), Vector2.LEFT)
-			
-			if obstaclePosition != Vector2.ZERO:
+			var obstacle = findObstacle(player.get_position_delta(), Vector2.LEFT)
+				
+			if obstacle != null:
 				print("Left!")
-				player.position = obstaclePosition
 				lastDirection = Vector2.ZERO
+				lastObstacleFound = obstacle
+				obstacle.emit_signal("chosen")
 		if lastDirection == Vector2.UP:
-			var obstaclePosition = findObstacle(player.get_position_delta(), Vector2.UP)
+			var obstacle = findObstacle(player.get_position_delta(), Vector2.UP)
 			
-			if obstaclePosition != Vector2.ZERO:
+			if obstacle != null:
 				print("Down!")
-				player.position = obstaclePosition
 				lastDirection = Vector2.ZERO
+				lastObstacleFound = obstacle
+				obstacle.emit_signal("chosen")
