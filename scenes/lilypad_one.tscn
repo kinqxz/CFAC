@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfupjx6wvq84b"]
+
+[ext_resource type="Texture2D" uid="uid://pcq1dhuoki6w" path="res://assets/spritesheet.png" id="1_7yrba"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v41px"]
+atlas = ExtResource("1_7yrba")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn7mu"]
+atlas = ExtResource("1_7yrba")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur0me"]
+atlas = ExtResource("1_7yrba")
+region = Rect2(0, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfmrj"]
+atlas = ExtResource("1_7yrba")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qrkp3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v41px")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wn7mu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur0me")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfmrj")
+}],
+"loop": true,
+"name": &"submerge",
+"speed": 2.0
+}]
+
+[node name="LilypadOne" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_qrkp3")
+frame_progress = 0.902602
