@@ -2,12 +2,13 @@ extends CharacterBody2D
 
 @onready var player: CharacterBody2D = $"."
 @onready var obstaclesNode: Node = $"../Obstacles"
+@onready var lilypad_one: AnimatedSprite2D = $"../Obstacles/Lilypads/Lilypad"
 
 #const SPEED = 300.0
-var initPosition : Vector2 = Vector2(184.0, 152.0)
+var initPosition : Vector2 = Vector2(184.0, 104.0)
 var jumpingDistance : float = 16.0
 var lastDirection : Vector2 = Vector2.ZERO
-var lastObstacleFound : AnimatedSprite2D = null
+@onready var lastObstacleFound : AnimatedSprite2D = lilypad_one
 var obstacleFound : AnimatedSprite2D = null
 #const JUMP_VELOCITY = -400.0
 #var health = 100.0
