@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjn7wop0iva5s"]
+[gd_scene load_steps=12 format=3 uid="uid://cjn7wop0iva5s"]
 
 [ext_resource type="Script" uid="uid://dq53a0iomb0fk" path="res://scripts/player.gd" id="1_sbkda"]
 [ext_resource type="Texture2D" uid="uid://beick2773dc80" path="res://assets/playersheet.png" id="2_g2els"]
@@ -82,17 +82,28 @@ _data = {
 &"move": SubResource("Animation_g2els")
 }
 
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_qlg0r"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tuyoq"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fjrip"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_smehm"]
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_qlg0r")
+states/Idle/position = Vector2(543, 100)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_tuyoq"), "Idle", "End", SubResource("AnimationNodeStateMachineTransition_fjrip")]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buwyd"]
 size = Vector2(6.75, 6.5)
 
 [node name="Player" type="CharacterBody2D"]
 slide_on_ceiling = false
 script = ExtResource("1_sbkda")
-metadata/_edit_horizontal_guides_ = [-8.0]
-metadata/_edit_vertical_guides_ = [-8.0]
 
 [node name="Body" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.0726563, 0.0726563)
 texture = ExtResource("2_g2els")
 hframes = 12
 vframes = 12
@@ -105,6 +116,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_dqkch")
 }
 autoplay = "idle"
+
+[node name="AnimationTree" type="AnimationTree" parent="Body"]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeStateMachine_smehm")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Idle/blend_position = Vector2(0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_buwyd")

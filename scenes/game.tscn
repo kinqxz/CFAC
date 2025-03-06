@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=4 uid="uid://dteh7ek58fkxp"]
 
 [ext_resource type="Texture2D" uid="uid://pcq1dhuoki6w" path="res://assets/spritesheet.png" id="1_lbhrr"]
-[ext_resource type="Script" uid="uid://golhvvg7fyru" path="res://scenes/game.gd" id="1_u5sy4"]
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://ct8sikaqf75ix" path="res://scenes/StartMenu.tscn" id="1_wmtrw"]
 [ext_resource type="PackedScene" uid="uid://cfupjx6wvq84b" path="res://scenes/lilypad_one.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bu7lit7leolqw" path="res://scenes/WallTop.tscn" id="3_lbhrr"]
@@ -110,38 +110,11 @@ position = Vector2(184, 152)
 [node name="LilypadOne2" parent="Obstacles/Lilypads" instance=ExtResource("2_lnu2h")]
 position = Vector2(216, 152)
 
-[node name="LilypadOne3" parent="Obstacles/Lilypads" instance=ExtResource("2_lnu2h")]
-position = Vector2(168, 152)
-
-[node name="LilypadOne4" parent="Obstacles/Lilypads" instance=ExtResource("2_lnu2h")]
-position = Vector2(152, 152)
-
-[node name="LilypadOne5" parent="Obstacles/Lilypads" instance=ExtResource("2_lnu2h")]
-position = Vector2(184, 136)
-
-[node name="LilypadOne6" parent="Obstacles/Lilypads" instance=ExtResource("2_lnu2h")]
-position = Vector2(184, 120)
-
-[node name="LilypadOne7" parent="Obstacles/Lilypads" instance=ExtResource("2_lnu2h")]
-position = Vector2(184, 168)
-
 [node name="LilypadOne8" parent="Obstacles/Lilypads" instance=ExtResource("2_lnu2h")]
-position = Vector2(184, 184)
-
-[node name="LilypadOne9" parent="Obstacles/Lilypads" instance=ExtResource("2_lnu2h")]
 position = Vector2(200, 152)
 
 [node name="LilypadOne10" parent="Obstacles/Lilypads" instance=ExtResource("2_lnu2h")]
-position = Vector2(200, 168)
-
-[node name="LilypadOne11" parent="Obstacles/Lilypads" instance=ExtResource("2_lnu2h")]
-position = Vector2(216, 136)
-
-[node name="LilypadOne12" parent="Obstacles/Lilypads" instance=ExtResource("2_lnu2h")]
-position = Vector2(168, 168)
-
-[node name="LilypadOne13" parent="Obstacles/Lilypads" instance=ExtResource("2_lnu2h")]
-position = Vector2(168, 136)
+position = Vector2(232, 152)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -149,4 +122,3 @@ zoom = Vector2(2, 2.13)
 
 [node name="Player" parent="." instance=ExtResource("6_p57ef")]
 z_index = 1
-position = Vector2(184, 152)
