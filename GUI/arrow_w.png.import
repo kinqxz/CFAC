@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dehgxg4hjkkte"
-path="res://.godot/imported/Heart_corazón.svg.png-9f1fea906aa23812863ab1f88d02e3aa.ctex"
+uid="uid://c4raj2ehnrsb6"
+path="res://.godot/imported/arrow_w.png-dd02556b6be1459770954b000a85da88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GUI/Heart_corazón.svg.png"
-dest_files=["res://.godot/imported/Heart_corazón.svg.png-9f1fea906aa23812863ab1f88d02e3aa.ctex"]
+source_file="res://GUI/arrow_w.png"
+dest_files=["res://.godot/imported/arrow_w.png-dd02556b6be1459770954b000a85da88.ctex"]
 
 [params]
 
