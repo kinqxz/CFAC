@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkm78aoxeiaie"]
+
+[ext_resource type="FontFile" uid="uid://c3r03lihi5w07" path="res://assets/GAMEDAY.ttf" id="1_7t0y3"]
+[ext_resource type="Script" path="res://GUI/death_screen.gd" id="1_p33pm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_thfcl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqhgj"]
+bg_color = Color(0.223109, 0.478659, 0.449351, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.163457, 0.370342, 0.346772, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jaud6"]
+bg_color = Color(0.349333, 0.676407, 0.637838, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.257895, 0.538182, 0.505855, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[node name="DeathScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p33pm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -53.5
+offset_right = 181.0
+offset_bottom = 53.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Try Again" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_thfcl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_aqhgj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jaud6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jaud6")
+text = "Try Again"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_thfcl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_aqhgj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jaud6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jaud6")
+text = "Quit
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -163.5
+offset_top = 113.565
+offset_right = 163.5
+offset_bottom = 210.565
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("1_7t0y3")
+theme_override_font_sizes/font_size = 71
+text = "You Died."
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Try Again" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -221,6 +221,7 @@ text = "Credits"
 horizontal_alignment = 1
 
 [node name="BackButtonPanel" type="Panel" parent="."]
+layout_mode = 0
 offset_right = 50.0
 offset_bottom = 50.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mwl0f")
