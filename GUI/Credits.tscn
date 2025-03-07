@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6yxi3gxmhkxw"]
+[gd_scene load_steps=8 format=3 uid="uid://c072rot8sr6hv"]
 
-[ext_resource type="Script" path="res://GUI/credits.gd" id="1_845dp"]
+[ext_resource type="Script" uid="uid://botbq504rm0g4" path="res://GUI/credits.gd" id="1_845dp"]
+[ext_resource type="Texture2D" uid="uid://d3vlp34ngkc5h" path="res://assets/Logo.png" id="2_82rpg"]
 [ext_resource type="FontFile" uid="uid://c3r03lihi5w07" path="res://assets/GAMEDAY.ttf" id="2_hulu3"]
 [ext_resource type="Texture2D" uid="uid://c4raj2ehnrsb6" path="res://GUI/arrow_w.png" id="3_2amev"]
 
@@ -45,6 +46,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_845dp")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(4, 3.375)
+texture = ExtResource("2_82rpg")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

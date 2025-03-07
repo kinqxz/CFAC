@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkm78aoxeiaie"]
+[gd_scene load_steps=6 format=3 uid="uid://djiu6sonj5hu2"]
 
 [ext_resource type="FontFile" uid="uid://c3r03lihi5w07" path="res://assets/GAMEDAY.ttf" id="1_7t0y3"]
-[ext_resource type="Script" path="res://GUI/death_screen.gd" id="1_p33pm"]
+[ext_resource type="Script" uid="uid://d2wumdxyn33mc" path="res://GUI/death_screen.gd" id="1_p33pm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_thfcl"]
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsfybm85syfb"]
+[gd_scene load_steps=7 format=3 uid="uid://bsfybm85syfb"]
 
 [ext_resource type="Script" path="res://GUI/start_menu.gd" id="1_v4lr0"]
+[ext_resource type="Texture2D" uid="uid://d3vlp34ngkc5h" path="res://assets/Logo.png" id="2_geq1w"]
 [ext_resource type="FontFile" uid="uid://c3r03lihi5w07" path="res://assets/GAMEDAY.ttf" id="2_ryea1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3qq3d"]
@@ -41,6 +42,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v4lr0")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(4, 3.375)
+texture = ExtResource("2_geq1w")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

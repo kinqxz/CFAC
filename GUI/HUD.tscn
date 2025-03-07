@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://xmcur6whqrlf"]
+[gd_scene load_steps=2 format=3 uid="uid://dp67htbs3jg27"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6yss"]
 bg_color = Color(0.347455, 0.676706, 0.532925, 1)
@@ -15,6 +15,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 649.0
+scale = Vector2(0.764808, 0.764808)
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0

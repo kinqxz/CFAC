@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cfupjx6wvq84b"]
+[gd_scene load_steps=11 format=3 uid="uid://bngano6qjovxu"]
 
 [ext_resource type="Texture2D" uid="uid://pcq1dhuoki6w" path="res://assets/spritesheet.png" id="1_byb13"]
-[ext_resource type="Script" uid="uid://cjuxi7ptxybng" path="res://scripts/lilypad_one.gd" id="2_ii1sw"]
+[ext_resource type="Script" path="res://scripts/lilypad_one.gd" id="2_ii1sw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v41px"]
 atlas = ExtResource("1_byb13")

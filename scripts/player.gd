@@ -41,42 +41,45 @@ func findObstacle(playerPosition : Vector2, direction: Vector2) -> AnimatedSprit
 	for obstacle in obstacles:
 		if obstacle.get_child_count() != 0:
 			for child in obstacle.get_children():
-				if child.name.substr(0, 7) == "Lilypad":
+				if child.name.substr(0, 7) == "Lilypad" || child.name.begins_with("@"):
 					if child is AnimatedSprite2D:
 						var icon : AnimatedSprite2D = child
 						var currentDeltaX = icon.position.x - playerX
 						var currentDeltaY = icon.position.y - playerY
 						
 						if direction == Vector2.UP:
-							if currentDeltaY <= deltaY && currentDeltaY > 0:
+							if currentDeltaY <= deltaY and currentDeltaY > 0:
 								deltaX = currentDeltaX
 								deltaY = currentDeltaY
 								
 								if deltaX == 0:
-									if deltaY <= jumpingDistance && deltaY > 0:
+									if deltaY <= jumpingDistance:
 										lastObstacle = icon
 						elif direction == Vector2.DOWN:
-							if currentDeltaY < deltaY:
+							if currentDeltaY < -deltaY and abs(currentDeltaY) > 0:
 								deltaX = currentDeltaX
 								deltaY = currentDeltaY
 								
 								if deltaX == 0:
-									if deltaY >= (-1 * jumpingDistance) && deltaY < 0:
+									if deltaY >= (-1 * jumpingDistance):
 										lastObstacle = icon
 						elif direction == Vector2.LEFT:
-							if currentDeltaX < deltaX:
+							if currentDeltaX < 0 and abs(currentDeltaX) < abs(deltaX):
 								deltaX = currentDeltaX
 								deltaY = currentDeltaY
 								
-								if deltaX >= (-1 * jumpingDistance) && deltaX < 0:
-									if deltaY == 0:
-										lastObstacle = icon
+							if deltaX >= -jumpingDistance and deltaY == 0:
+								lastObstacle = icon
 						elif direction == Vector2.RIGHT:
-							if currentDeltaX < deltaX && currentDeltaX > 0:
+							if currentDeltaX < deltaX and currentDeltaX > 0:
+								print("hi")
+								print(currentDeltaX)
+								print(currentDeltaY)
 								deltaX = currentDeltaX
 								deltaY = currentDeltaY
 								
-								if deltaX <= jumpingDistance && deltaX > 0:
+								if deltaX <= jumpingDistance and deltaY == 0:
+									print(deltaY)
 									if deltaY == 0:
 										lastObstacle = icon
 	
@@ -96,11 +99,7 @@ func checkPlayerRotation(direction : Vector2) -> void:
 		if player.rotation_degrees != 90.0:
 			player.rotation_degrees = 90.0
 
-func firstGeneration() -> void:
-	print("test")
-
 func _ready() -> void:
-	firstGeneration()
 	player.position = initPosition
 
 func _physics_process(delta):
@@ -112,6 +111,7 @@ func _physics_process(delta):
 			
 			if obstacleFound != null:
 				obstacleFound.emit_signal("chosen_stop")
+				obstacleFound = null
 	
 	if Input.is_action_just_released("initial_position"):
 		player.position = initPosition
@@ -159,6 +159,7 @@ func _physics_process(delta):
 			#This is actually down
 			checkPlayerRotation(Vector2.UP)
 			var obstacle = findObstacle(player.get_position_delta(), Vector2.UP)
+			print(obstacle)
 			
 			if obstacle != null:
 				print("Down!")

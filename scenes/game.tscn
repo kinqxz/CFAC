@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://dteh7ek58fkxp"]
+[gd_scene load_steps=25 format=4 uid="uid://dteh7ek58fkxp"]
 
 [ext_resource type="Texture2D" uid="uid://pcq1dhuoki6w" path="res://assets/spritesheet.png" id="1_lbhrr"]
-[ext_resource type="Script" path="res://scenes/game.gd" id="1_u5sy4"]
-[ext_resource type="PackedScene" path="res://scenes/lilypad_one.tscn" id="2_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://bu7lit7leolqw" path="res://scenes/WallTop.tscn" id="3_lbhrr"]
+[ext_resource type="Script" uid="uid://golhvvg7fyru" path="res://scenes/game.gd" id="1_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://bngano6qjovxu" path="res://scenes/lilypad.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://d4k3qb75six28" path="res://scenes/WallBottom.tscn" id="4_iywne"]
+[ext_resource type="Texture2D" uid="uid://t4gmp6tldhy7" path="res://assets/SpritesheetGoodGood.png" id="5_p57ef"]
 [ext_resource type="PackedScene" uid="uid://cjn7wop0iva5s" path="res://scenes/player.tscn" id="6_p57ef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
@@ -66,17 +66,249 @@ texture = ExtResource("1_lbhrr")
 2:11/size_in_atlas = Vector2i(2, 1)
 2:11/0 = 0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i315"]
+atlas = ExtResource("1_lbhrr")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s544"]
+atlas = ExtResource("1_lbhrr")
+region = Rect2(32, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pil8t"]
+atlas = ExtResource("1_lbhrr")
+region = Rect2(32, 32, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhgvj"]
+atlas = ExtResource("1_lbhrr")
+region = Rect2(32, 48, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4cqd"]
+atlas = ExtResource("1_lbhrr")
+region = Rect2(32, 64, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_712qx"]
+atlas = ExtResource("1_lbhrr")
+region = Rect2(32, 80, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfi0k"]
+atlas = ExtResource("1_lbhrr")
+region = Rect2(32, 96, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygnp3"]
+atlas = ExtResource("1_lbhrr")
+region = Rect2(32, 112, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3apvh"]
+atlas = ExtResource("1_lbhrr")
+region = Rect2(32, 128, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqthl"]
+atlas = ExtResource("1_lbhrr")
+region = Rect2(32, 144, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2shu"]
+atlas = ExtResource("1_lbhrr")
+region = Rect2(32, 160, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7u0r"]
+atlas = ExtResource("1_lbhrr")
+region = Rect2(32, 176, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jqr4b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i315")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5s544")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pil8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhgvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4cqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_712qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfi0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygnp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3apvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqthl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2shu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7u0r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="PackedScene" id="PackedScene_iywne"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("WallTop", "AnimatedSprite2D", "sprite_frames", "autoplay", "frame", "frame_progress"),
+"node_count": 1,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 4, 2, 0, 3, 1, 4, 2, 5, 3, 0),
+"variants": [SubResource("SpriteFrames_jqr4b"), "default", 6, 0.4166],
+"version": 3
+}
+
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_lbhrr"]
 scenes/1/scene = ExtResource("2_lnu2h")
-scenes/2/scene = ExtResource("3_lbhrr")
+scenes/2/scene = SubResource("PackedScene_iywne")
 scenes/3/scene = ExtResource("4_iywne")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5sy4"]
+texture = ExtResource("5_p57ef")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+6:0/0 = 0
+6:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_iywne"]
 sources/0 = SubResource("TileSetAtlasSource_lbhrr")
 sources/1 = SubResource("TileSetScenesCollectionSource_lbhrr")
+sources/3 = SubResource("TileSetAtlasSource_u5sy4")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_u5sy4")
+metadata/_edit_horizontal_guides_ = [0.0]
+metadata/_edit_vertical_guides_ = [8.0]
 
 [node name="Map" type="Node" parent="."]
 
@@ -88,18 +320,6 @@ tile_set = SubResource("TileSet_iywne")
 [node name="Obstacles" type="Node" parent="."]
 
 [node name="Lilypads" type="Node" parent="Obstacles"]
-
-[node name="Lilypad" parent="Obstacles/Lilypads" instance=ExtResource("2_lnu2h")]
-position = Vector2(184, 104)
-
-[node name="Lilypad2" parent="Obstacles/Lilypads" instance=ExtResource("2_lnu2h")]
-position = Vector2(216, 104)
-
-[node name="Lilypad3" parent="Obstacles/Lilypads" instance=ExtResource("2_lnu2h")]
-position = Vector2(200, 104)
-
-[node name="Lilypad4" parent="Obstacles/Lilypads" instance=ExtResource("2_lnu2h")]
-position = Vector2(232, 104)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
