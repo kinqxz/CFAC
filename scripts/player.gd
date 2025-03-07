@@ -96,7 +96,11 @@ func checkPlayerRotation(direction : Vector2) -> void:
 		if player.rotation_degrees != 90.0:
 			player.rotation_degrees = 90.0
 
+func firstGeneration() -> void:
+	
+
 func _ready() -> void:
+	firstGeneration()
 	player.position = initPosition
 
 func _physics_process(delta):
