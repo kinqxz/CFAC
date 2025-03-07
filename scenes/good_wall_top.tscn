@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=3 uid="uid://c3cxq4k4rclby"]
+
+[ext_resource type="Texture2D" uid="uid://t4gmp6tldhy7" path="res://assets/SpritesheetGoodGood.png" id="1_u5bc1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmlsf"]
+atlas = ExtResource("1_u5bc1")
+region = Rect2(80, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfw36"]
+atlas = ExtResource("1_u5bc1")
+region = Rect2(80, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y61b"]
+atlas = ExtResource("1_u5bc1")
+region = Rect2(80, 32, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drkw6"]
+atlas = ExtResource("1_u5bc1")
+region = Rect2(80, 48, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxnux"]
+atlas = ExtResource("1_u5bc1")
+region = Rect2(80, 64, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0f83"]
+atlas = ExtResource("1_u5bc1")
+region = Rect2(80, 80, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smerd"]
+atlas = ExtResource("1_u5bc1")
+region = Rect2(80, 96, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhb2g"]
+atlas = ExtResource("1_u5bc1")
+region = Rect2(80, 112, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvfd7"]
+atlas = ExtResource("1_u5bc1")
+region = Rect2(80, 128, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5762i"]
+atlas = ExtResource("1_u5bc1")
+region = Rect2(80, 144, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp11e"]
+atlas = ExtResource("1_u5bc1")
+region = Rect2(80, 160, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro83e"]
+atlas = ExtResource("1_u5bc1")
+region = Rect2(80, 176, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cm4on"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmlsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfw36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8y61b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drkw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxnux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0f83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smerd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhb2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvfd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5762i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp11e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro83e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GoodWallTop" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_cm4on")
+frame_progress = 0.915766

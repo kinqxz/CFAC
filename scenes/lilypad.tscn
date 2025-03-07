@@ -1,15 +1,28 @@
-[gd_scene load_steps=11 format=3 uid="uid://bngano6qjovxu"]
+[gd_scene load_steps=15 format=3 uid="uid://bngano6qjovxu"]
 
 [ext_resource type="Texture2D" uid="uid://pcq1dhuoki6w" path="res://assets/spritesheet.png" id="1_byb13"]
-[ext_resource type="Script" path="res://scripts/lilypad_one.gd" id="2_ii1sw"]
+[ext_resource type="Texture2D" uid="uid://t4gmp6tldhy7" path="res://assets/SpritesheetGoodGood.png" id="1_ii1sw"]
+[ext_resource type="Script" uid="uid://cjuxi7ptxybng" path="res://scripts/lilypad_one.gd" id="2_ii1sw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v41px"]
-atlas = ExtResource("1_byb13")
-region = Rect2(0, 80, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fccxl"]
+atlas = ExtResource("1_ii1sw")
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wn7mu"]
-atlas = ExtResource("1_byb13")
-region = Rect2(0, 80, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmell"]
+atlas = ExtResource("1_ii1sw")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn13d"]
+atlas = ExtResource("1_ii1sw")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iu7a"]
+atlas = ExtResource("1_ii1sw")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqade"]
+atlas = ExtResource("1_ii1sw")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ur0me"]
 atlas = ExtResource("1_byb13")
@@ -23,15 +36,24 @@ region = Rect2(16, 0, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v41px")
+"texture": SubResource("AtlasTexture_fccxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmell")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn13d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iu7a")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_wn7mu")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqade")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ur0me")
@@ -84,6 +106,9 @@ _data = {
 
 [node name="Lilypad" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_qrkp3")
+animation = &"submerge"
+frame = 2
+frame_progress = 1.0
 script = ExtResource("2_ii1sw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
