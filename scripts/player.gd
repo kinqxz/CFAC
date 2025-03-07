@@ -97,7 +97,7 @@ func checkPlayerRotation(direction : Vector2) -> void:
 			player.rotation_degrees = 90.0
 
 func firstGeneration() -> void:
-	
+	print("test")
 
 func _ready() -> void:
 	firstGeneration()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://tsi7thxitn3u"]
+[gd_scene load_steps=6 format=3 uid="uid://bsfybm85syfb"]
 
 [ext_resource type="Script" path="res://GUI/start_menu.gd" id="1_v4lr0"]
 [ext_resource type="FontFile" uid="uid://c3r03lihi5w07" path="res://assets/GAMEDAY.ttf" id="2_ryea1"]
