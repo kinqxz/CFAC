@@ -56,14 +56,11 @@ func findObstacle(playerPosition : Vector2, direction: Vector2) -> AnimatedSprit
 									if deltaY <= jumpingDistance && deltaY > 0:
 										lastObstacle = icon
 						elif direction == Vector2.DOWN:
-							print("why")
 							if currentDeltaY < deltaY:
-								print("hii")
 								deltaX = currentDeltaX
 								deltaY = currentDeltaY
 								
 								if deltaX == 0:
-									print("hel")
 									if deltaY >= (-1 * jumpingDistance) && deltaY < 0:
 										lastObstacle = icon
 						elif direction == Vector2.LEFT:
